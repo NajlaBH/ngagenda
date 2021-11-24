@@ -12,4 +12,10 @@ export class CfooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Define footer Date
+  now = new Date();
+
+  // Convert date to string
+  footerdate =  this.now.getFullYear();
+
 }
