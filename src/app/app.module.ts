@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { CnvbarComponent } from './cnvbar/cnvbar.component';
 import { CfooterComponent } from './cfooter/cfooter.component';
 import { CcontactsComponent } from './ccontacts/ccontacts.component';
+import { AuthComponent } from './auth/auth.component';
+import { CbaseComponent } from './cbase/cbase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CnvbarComponent,
     CfooterComponent,
-    CcontactsComponent
+    CcontactsComponent,
+    AuthComponent,
+    CbaseComponent
   ],
   imports: [
     BrowserModule,
