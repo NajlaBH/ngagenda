@@ -1,0 +1,17 @@
+div#main-container {
+	color:#483D8B;
+}
+#auth-form {
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  padding: 0;
+  color:#483D8B;
+}
+#auth-form .input-group {margin-bottom: 10px;color:#483D8B;}
+#auth-form .panel-body {text-align: center;color:#483D8B;}
+.card-header{color:#483D8B;}
