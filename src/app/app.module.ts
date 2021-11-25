@@ -9,6 +9,11 @@ import { CcontactsComponent } from './ccontacts/ccontacts.component';
 import { AuthComponent } from './auth/auth.component';
 import { CbaseComponent } from './cbase/cbase.component';
 
+import { FormsModule } from '@angular/forms';
+
+import {AgendaserviceService} from './agendaservice.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +25,12 @@ import { CbaseComponent } from './cbase/cbase.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AgendaserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

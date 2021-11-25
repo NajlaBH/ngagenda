@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+
+import {AgendaserviceService} from '../agendaservice.service';
+
+
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  
+  //is Authenticated
+  public isAuthenticated:boolean=false;
+
+  loginValue:string="";
+  passValue:string="";
+
+  compValue:boolean=false;
+  
+  //constructor(){}
+  constructor(private agendaservice: AgendaserviceService) { }
 
   ngOnInit(): void {
+      //send to service ok
+      this.compValue=this.agendaservice.serviceValue;
+      console.log(this.compValue);
+  }
+
+
+  checkCredits(){
+    if ((this.loginValue == "admin") && (this.passValue == "admin")){
+       alert("You are logged with success");
+       this.isAuthenticated=true;
+       return this.isAuthenticated;
+    }else{
+       alert("Please check your credits.");
+       this.isAuthenticated=false;
+       return this.isAuthenticated;
+    }
+
   }
 
 }
