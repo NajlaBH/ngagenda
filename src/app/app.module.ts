@@ -11,7 +11,7 @@ import { CbaseComponent } from './cbase/cbase.component';
 
 import { FormsModule } from '@angular/forms';
 
-import {AgendaserviceService} from './agendaservice.service';
+import { ContactService } from './services/contact.service';
 
 
 @NgModule({
@@ -28,9 +28,7 @@ import {AgendaserviceService} from './agendaservice.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [
-    AgendaserviceService
-  ],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
