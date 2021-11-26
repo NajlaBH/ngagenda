@@ -12,7 +12,7 @@ import { CbaseComponent } from './cbase/cbase.component';
 import { FormsModule } from '@angular/forms';
 
 import { ContactService } from './services/contact.service';
-
+import { NvbarService } from './services/nvbar.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,11 @@ import { ContactService } from './services/contact.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ContactService],
+  providers: [
+    ContactService,
+    NvbarService,
+    AuthComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
