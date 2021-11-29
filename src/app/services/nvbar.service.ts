@@ -10,7 +10,7 @@ export class NvbarService {
   isShown:boolean=false;
   isAuthenticated:boolean=false;
 
-
+  userName:string="PublicUser";
   constructor(){}
 
   //Initialize credits
@@ -24,12 +24,14 @@ export class NvbarService {
        alert("You are logged with success");
        this.isAuthenticated=true; 
        this.isShown=true;
+       this.userName=this.loginValue;
        console.log("trueif:",this.isAuthenticated,this.isShown);
        return this.isAuthenticated;
     }else{
        alert("Please check your credits.");
        this.isAuthenticated=false;
        this.isShown=false;
+       this.userName="PublicUser";
        console.log("falseif:",this.isAuthenticated,this.isShown);
        return this.isAuthenticated;
     }
@@ -38,6 +40,8 @@ export class NvbarService {
 
   clickLogout(){
     this.isShown=false;
+    this.userName="PublicUser";
+
   }
 
 

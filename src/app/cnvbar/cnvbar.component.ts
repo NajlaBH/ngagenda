@@ -14,7 +14,8 @@ import { NvbarService } from '../services/nvbar.service';
 
 export class CnvbarComponent implements OnInit {
  
-  //public isShown:boolean=false;
+  userName:string="PublicUser";
+
   
  
   constructor(public nvbarservice:NvbarService) { }

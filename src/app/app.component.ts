@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NvbarService } from './services/nvbar.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -10,9 +13,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit  {
   title = 'ngagenda';
 
-  userName:string="PublicUser";
+  //userName:string="PublicUser";
 
-  constructor() { }
+  constructor(public navbarservice:NvbarService) { }
 
   ngOnInit(): void {
   
