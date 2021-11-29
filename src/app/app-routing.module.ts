@@ -7,9 +7,10 @@ import { CcontactsComponent } from './ccontacts/ccontacts.component';
 import { CbaseComponent } from './cbase/cbase.component';
 
 const routes: Routes = [
+	{path:'', redirectTo:'about', pathMatch:'full' },
 	{path: 'login', component: AuthComponent},
 	{path: 'home', component: CcontactsComponent},
-	{path: '', component: CbaseComponent},
+	{path: 'about', component: CbaseComponent},
 	];
 
 @NgModule({

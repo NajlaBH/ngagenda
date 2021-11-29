@@ -1,25 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-	  <a class="navbar-brand" href="#" style="color:#9932CC;"><strong>AGENDA</strong></a>
+	  <a class="navbar-brand" routerLink="" routerLinkActive="active"style="color:#9932CC;"><strong>AGENDA</strong></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="isShown" href="#">Settings</a>
+          <a class="nav-link" *ngIf="isShown" routerLink="#" routerLinkActive="active" >Settings</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isShown" routerLink="/about" routerLinkActive="active" >About</a>
+        </li>
+	<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="#" routerLinkActive="active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profile
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item"  routerLink="/login">MyAccount</a></li>
+            <li><a class="dropdown-item"  routerLink="/login" routerLinkActive="active" >MyAccount</a></li>
             <!--li><hr class="dropdown-divider"></li-->
-            <li><a *ngIf="isShown" class="dropdown-item" href="#">LogOut</a></li>
+            <li><a *ngIf="isShown" class="dropdown-item" routerLink="#" routerLinkActive="active" >LogOut</a></li>
           </ul>
         </li>
         <!--li class="nav-item">
