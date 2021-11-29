@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ContactService } from './services/contact.service';
 import { NvbarService } from './services/nvbar.service';
+import { CrudComponent } from './crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NvbarService } from './services/nvbar.service';
     CfooterComponent,
     CcontactsComponent,
     AuthComponent,
-    CbaseComponent
+    CbaseComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
