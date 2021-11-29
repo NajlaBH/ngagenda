@@ -14,18 +14,18 @@ import { NvbarService } from '../services/nvbar.service';
 
 export class CnvbarComponent implements OnInit {
  
-  public isShown:boolean=false;
+  //public isShown:boolean=false;
   
  
-  constructor(private nvbarservice:NvbarService) { }
+  constructor(public nvbarservice:NvbarService) { }
 
   ngOnInit(): void {
-   this.isShown = this.nvbarservice.authent;
+   //this.isShown = this.nvbarservice.authent;
   }
 
   //Able/disable button setting
   toggleShow() {
-  	this.isShown = ! this.isShown;
+  	this.nvbarservice.isShown = ! this.nvbarservice.isShown;
   }
 
 }

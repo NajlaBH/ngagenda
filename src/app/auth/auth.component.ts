@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-
+import { NvbarService } from '../services/nvbar.service'
 
 @Component({
   selector: 'app-auth',
@@ -7,37 +7,11 @@ import { Component, OnInit, NgModule } from '@angular/core';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  // Authentification
-  isAuthenticated:boolean=false;
-
-  //Initialize credits
-  loginValue:string="";
-  passValue:string="";
-
  
-  //constructor(){}
+  constructor(public navserv:NvbarService){}
  
-
-
-  // Check credits inputs
-  checkCredits(){
-    if ((this.loginValue == "admin") && (this.passValue == "admin")){
-       alert("You are logged with success");
-       this.isAuthenticated=true;
-       //console.log("trueif:",this.isAuthenticated);
-       
-       return this.isAuthenticated;
-    }else{
-       alert("Please check your credits.");
-       this.isAuthenticated=false;
-       console.log("falseif:",this.isAuthenticated);
-       return this.isAuthenticated;
-    }
-  }
-
   ngOnInit(): void{
-    //this.isAuthenticated=this.checkCredits();
-    //console.log("onInitauth:",this.isAuthenticated);  
+ 
   }
   
   

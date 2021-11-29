@@ -7,25 +7,42 @@ import { AuthComponent } from '../auth/auth.component';
 
 
 export class NvbarService {
-  authent:boolean=false;
-  //testValue:boolean=true;
-  
+  isShown:boolean=false;
+  isAuthenticated:boolean=false;
 
-  constructor( private cauth:AuthComponent ) { }
-  //constructor(){}
 
-  /*
-  
-  getMyValue(){
-    this.testValue=this.cauth.checkCredits();
-    console.log("tracer isAuthenticated",this.testValue);
-    return this.testValue;
+  constructor(){}
+
+  //Initialize credits
+  loginValue:string="";
+  passValue:string="";
+
+
+  // Check credits inputs
+  checkCredits(){
+    if ((this.loginValue == "admin") && (this.passValue == "admin")){
+       alert("You are logged with success");
+       this.isAuthenticated=true; 
+       this.isShown=true;
+       console.log("trueif:",this.isAuthenticated,this.isShown);
+       return this.isAuthenticated;
+    }else{
+       alert("Please check your credits.");
+       this.isAuthenticated=false;
+       this.isShown=false;
+       console.log("falseif:",this.isAuthenticated,this.isShown);
+       return this.isAuthenticated;
+    }
   }
 
-  //Hide-UnHide setting menu 
-  //authent:boolean=this.cauth.isAuthenticated;
-  authent:boolean=this.getMyValue();
-  */
+
+  clickLogout(){
+    this.isShown=false;
+  }
+
+
+   ngOnInit(): void{
+    //this.isShown=this.checkCredits();
+    //console.log("onInitauth:",this.isShown);  
+   }
 }
-
-
