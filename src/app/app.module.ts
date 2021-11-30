@@ -13,10 +13,11 @@ import { FormsModule } from '@angular/forms';
 
 import { ContactService } from './services/contact.service';
 import { NvbarService } from './services/nvbar.service';
+
 import { CrudComponent } from './crud/crud.component';
 
 import { CrudService } from './services/crud.service';
-
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CrudService } from './services/crud.service';
     ContactService,
     NvbarService,
     CrudService,
+    AuthGuardService,
     AuthComponent
   ],
   bootstrap: [AppComponent]

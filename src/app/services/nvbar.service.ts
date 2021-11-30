@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 
 export class NvbarService {
   isShown:boolean=false;
+  
   isAuthenticated:boolean=false;
+  isLoggedIn:boolean=false;
 
   userName:string="PublicUser";
   routeName:string="";
@@ -31,7 +33,8 @@ export class NvbarService {
        this.userName=this.loginValue;
        this.router.navigateByUrl('/crud');
        this.routeName="/crud";
-       console.log("trueif:",this.isAuthenticated,this.isShown);
+       this.isLoggedIn=true;
+       console.log("trueif:",this.isAuthenticated,this.isShown,this.isLoggedIn);
        return this.isAuthenticated;
     }else{
        alert("Please check your credits.");
@@ -40,7 +43,8 @@ export class NvbarService {
        this.userName="PublicUser";
        this.router.navigateByUrl('/');
        this.routeName="";
-       console.log("falseif:",this.isAuthenticated,this.isShown);
+       this.isLoggedIn=false;
+       console.log("falseif:",this.isAuthenticated,this.isShown,this.isLoggedIn);
        return this.isAuthenticated;
     }
   }
@@ -52,8 +56,20 @@ export class NvbarService {
 
   }
 
+  checkLogIn(){
+    if((this.loginValue == "admin") && (this.passValue == "admin")){
+    	return true;
+    }else{
+	return false;
+    }
+  }
+ 
+  //isLoggedIn:boolean=this.checkLogIn();
+  //isLoggedIn:boolean=false;
 
    ngOnInit(): void{
+
+    //this.isLoggedIn=this.checkLogIn();
     //this.isShown=this.checkCredits();
     //console.log("onInitauth:",this.isShown);  
    }
