@@ -15,6 +15,10 @@ import { ContactService } from './services/contact.service';
 import { NvbarService } from './services/nvbar.service';
 import { CrudComponent } from './crud/crud.component';
 
+import { CrudService } from './services/crud.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +37,7 @@ import { CrudComponent } from './crud/crud.component';
   providers: [
     ContactService,
     NvbarService,
+    CrudService,
     AuthComponent
   ],
   bootstrap: [AppComponent]
