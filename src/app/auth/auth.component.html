@@ -18,7 +18,7 @@
             </span>
             <input type="password" id="password" name="password" [(ngModel)]="navserv.passValue" class="form-control" placeholder="Password">
           </div>
-          <button type="button" class="btn" style="background-color:#9932CC; color:white;" (click)="navserv.checkCredits()">Login</button>
+	  <button type="button" class="btn" style="background-color:#9932CC; color:white;" [routerLink]="navserv.routeName" (click)="navserv.checkCredits()">Login</button>
         </form>
       </div>
     </div>

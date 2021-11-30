@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AuthComponent } from '../auth/auth.component';
 
+import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +13,9 @@ export class NvbarService {
   isAuthenticated:boolean=false;
 
   userName:string="PublicUser";
-  constructor(){}
+  routeName:string="";
+
+  constructor(private router: Router){}
 
   //Initialize credits
   loginValue:string="";
@@ -25,6 +29,8 @@ export class NvbarService {
        this.isAuthenticated=true; 
        this.isShown=true;
        this.userName=this.loginValue;
+       this.router.navigateByUrl('/crud');
+       this.routeName="/crud";
        console.log("trueif:",this.isAuthenticated,this.isShown);
        return this.isAuthenticated;
     }else{
@@ -32,6 +38,8 @@ export class NvbarService {
        this.isAuthenticated=false;
        this.isShown=false;
        this.userName="PublicUser";
+       this.router.navigateByUrl('/');
+       this.routeName="";
        console.log("falseif:",this.isAuthenticated,this.isShown);
        return this.isAuthenticated;
     }
