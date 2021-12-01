@@ -10,7 +10,6 @@
       <th scope="col">Phone</th>
       <th scope="col">Address</th>
       <th scope="col">Update</th>
-      <th scope="col">Add</th>
       <th scope="col">Delete</th>
       </tr>
       </thead>
@@ -22,10 +21,10 @@
 	     <td> {{contact.phone}} </td>
 	     <td> {{contact.address}}</td>
 	     <td><button type="button" class="btn btn-warning" >Up</button></td>
-	     <td><button type="button" class="btn btn-success">+</button></td>
 	     <td><button type="button" class="btn btn-danger"  (click)="contactservice.deleteContact(contact.contactid);">-</button></td>
      </tr>
     </tbody>
     </table>
+    <button type="button" class="btn btn-success" style="foat:right;" routerLink="/addContact" >ADD</button>
    </div>
 </div>

@@ -1,0 +1,40 @@
+<div class="cadd">
+	<form [formGroup]="formContact"  (ngSubmit)="addContact()"> 
+		<ul> 
+		    <li>
+			<div class="form-group"> 
+    				<label for="">ContactID</label>
+				<input type="text" formControlName="ncontactid" [(ngModel)]="ncontactid">
+          		</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Fullname</label>
+				<input type="text" formControlName="nfullname" [(ngModel)]="nfullname" >
+          		</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Email</label>
+				<input type="text" formControlName="nemail" [(ngModel)]="nemail" >
+          		</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Phone</label>
+				<input type="text" formControlName="nphone" [(ngModel)]="nphone" >
+          		</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Address</label>
+				<input type="text" formControlName="naddress" [(ngModel)]="naddress" >
+          		</div>
+		    </li><br>
+		</ul>    
+	  <div class="form-group"> 
+    		<button type="Submit"  [disabled]= " !formContact.valid" >Add</button>
+  	</div>
+	</form>
+
+</div>

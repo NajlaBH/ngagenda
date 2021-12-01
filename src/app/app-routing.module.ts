@@ -9,6 +9,8 @@ import { CrudComponent } from './crud/crud.component';
 
 import { AuthGuardService } from './services/auth-guard.service';
 
+import { AddContactComponent } from './add-contact/add-contact.component';
+
 
 const routes: Routes = [
 	{path:'', redirectTo:'about', pathMatch:'full' },
@@ -17,6 +19,7 @@ const routes: Routes = [
 	{path: 'about', component: CbaseComponent},
 	//{path: 'crud', component: CrudComponent},
         {path: 'crud', canActivate: [AuthGuardService], component: CrudComponent},
+	{path: 'addContact',canActivate: [AuthGuardService], component:AddContactComponent}, 
 	];
 
 @NgModule({

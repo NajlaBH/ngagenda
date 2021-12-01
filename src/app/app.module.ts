@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +10,6 @@ import { CcontactsComponent } from './ccontacts/ccontacts.component';
 import { AuthComponent } from './auth/auth.component';
 import { CbaseComponent } from './cbase/cbase.component';
 
-import { FormsModule } from '@angular/forms';
-
 import { ContactService } from './services/contact.service';
 import { NvbarService } from './services/nvbar.service';
 
@@ -18,6 +17,7 @@ import { CrudComponent } from './crud/crud.component';
 
 import { CrudService } from './services/crud.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AddContactComponent } from './add-contact/add-contact.component';
 
 
 @NgModule({
@@ -28,12 +28,14 @@ import { AuthGuardService } from './services/auth-guard.service';
     CcontactsComponent,
     AuthComponent,
     CbaseComponent,
-    CrudComponent
+    CrudComponent,
+    AddContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ContactService,
