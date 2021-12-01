@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+
 import { ContactService } from '../services/contact.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -21,7 +23,7 @@ export class AddContactComponent implements OnInit {
 
   //constructor() { }
   //Call service
-  constructor(public contactservice: ContactService){ }
+  constructor(public contactservice: ContactService,private router: Router){ }
   
   //Get contacts attributes
   contacts:Contact[]= this.contactservice.contactserv;
@@ -37,6 +39,15 @@ export class AddContactComponent implements OnInit {
   }); 
   newContacts:Contact[]=[];
   ncontactid:number= this.maxIndex.contactid +1;
+
+
+  onSubmit() {
+    this.router.navigateByUrl('/crud');
+  }
+
+
+
+
   addContact(){
 	this.tmpContacts=[{
 	        contactid:this.ncontactid,
@@ -50,17 +61,19 @@ export class AddContactComponent implements OnInit {
 	this.newContacts=this.contactservice.contactserv.concat(this.tmpContacts);
 	console.log("newcontact:",this.newContacts);
 	this.contactservice.contactserv=this.newContacts;
+	this.onSubmit();
 	return this.newContacts;
   }
 
 
   formContact = new FormGroup({
     ncontactid: new FormControl(''),
-    nfullname: new FormControl(''),
-    nemail: new FormControl(''),
-    nphone: new FormControl(''),
-    naddress: new FormControl(''),
+    nfullname: new FormControl('',Validators.required),
+    nemail: new FormControl('',[Validators.required, Validators.email]),
+    nphone: new FormControl('',[Validators.required, Validators.maxLength(8)]),
+    naddress: new FormControl('',Validators.required),
   })
+
 
   //newContacts:Contact[]=this.contactservice.contactserv.push(this.addContact());
   ngOnInit(): void {

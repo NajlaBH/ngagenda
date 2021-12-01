@@ -1,39 +1,51 @@
 <div class="cadd">
 	<form [formGroup]="formContact"  (ngSubmit)="addContact()"> 
-		<ul> 
+		<ul class="additem"> 
 		    <li>
 			<div class="form-group"> 
     				<label for="">ContactID</label>
-				<input type="text" formControlName="ncontactid" [(ngModel)]="ncontactid">
+				<input type="text" readonly formControlName="ncontactid" [(ngModel)]="ncontactid">
           		</div>
 		    </li><br>
 		    <li>
 			<div class="form-group"> 
-    				<label for="">Fullname</label>
-				<input type="text" formControlName="nfullname" [(ngModel)]="nfullname" >
+    				<label for="">Fullname<span class="danger" *ngIf="formContact.controls['nfullname'].valid == false " >*</span> </label>
+				<input type="text" formControlName="nfullname" [(ngModel)]="nfullname" [ngClass]="formContact.controls['nfullname'].valid == false ? 'control-danger' : 'control-success' " >
+				<p>
+      				  <small class="danger" *ngIf="formContact.value.nfullname =='' "   >this feild is required</small>
+				</p>
           		</div>
 		    </li><br>
 		    <li>
 			<div class="form-group"> 
-    				<label for="">Email</label>
-				<input type="text" formControlName="nemail" [(ngModel)]="nemail" >
-          		</div>
+    				<label for="">Email <span class="danger" *ngIf="formContact.controls['nemail'].valid == false " >*</span> </label> 
+				<input type="text" formControlName="nemail" [(ngModel)]="nemail" [ngClass]="formContact.controls['nemail'].valid == false ? 'control-danger' : 'control-success' ">
+				<p>
+      				  <small class="danger" *ngIf="formContact.value.nemail =='' "   >this feild is required</small>
+				</p>
+			</div>
 		    </li><br>
 		    <li>
 			<div class="form-group"> 
-    				<label for="">Phone</label>
-				<input type="text" formControlName="nphone" [(ngModel)]="nphone" >
-          		</div>
+    				<label for="">Phone <span class="danger" *ngIf="formContact.controls['nphone'].valid == false " >*</span> </label> 
+				<input type="text" formControlName="nphone" [(ngModel)]="nphone" [ngClass]="formContact.controls['nphone'].valid == false ? 'control-danger' : 'control-success' ">
+				<p>
+      				  <small class="danger" *ngIf="formContact.value.nphone =='' "   >this feild is required</small>
+				</p>
+			</div>
 		    </li><br>
 		    <li>
 			<div class="form-group"> 
-    				<label for="">Address</label>
-				<input type="text" formControlName="naddress" [(ngModel)]="naddress" >
-          		</div>
+    				<label for="">Address<span class="danger" *ngIf="formContact.controls['naddress'].valid == false " >*</span> </label> 
+				<input type="text" formControlName="naddress" [(ngModel)]="naddress" [ngClass]="formContact.controls['naddress'].valid == false ? 'control-danger' : 'control-success' ">
+				<p>
+      				  <small class="danger" *ngIf="formContact.value.naddress =='' "   >this feild is required</small>
+				</p>
+			</div>
 		    </li><br>
 		</ul>    
 	  <div class="form-group"> 
-    		<button type="Submit"  [disabled]= " !formContact.valid" >Add</button>
+    		<button type="Submit"  class="btn btn-success" [disabled]= " !formContact.valid" >Add</button>
   	</div>
 	</form>
 
