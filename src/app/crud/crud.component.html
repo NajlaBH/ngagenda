@@ -20,7 +20,7 @@
 	     <td> {{contact.email}} </td>
 	     <td> {{contact.phone}} </td>
 	     <td> {{contact.address}}</td>
-	     <td><button type="button" class="btn btn-warning" >Up</button></td>
+	     <td><button type="button" class="btn btn-warning"  (click)="contactservice.getId(contact.contactid)" >Up</button></td>
 	     <td><button type="button" class="btn btn-danger"  (click)="contactservice.deleteContact(contact.contactid);">-</button></td>
      </tr>
     </tbody>

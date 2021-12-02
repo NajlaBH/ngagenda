@@ -18,6 +18,7 @@ import { CrudComponent } from './crud/crud.component';
 import { CrudService } from './services/crud.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     AuthComponent,
     CbaseComponent,
     CrudComponent,
-    AddContactComponent
+    AddContactComponent,
+    UpdateContactComponent
   ],
   imports: [
     BrowserModule,

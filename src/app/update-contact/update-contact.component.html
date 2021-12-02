@@ -1,0 +1,52 @@
+<div class="cadd">
+	<form [formGroup]="formUpContact"  (ngSubmit)="updateContact()"> 
+		<ul class="additem"> 
+		    <li>
+			<div class="form-group"> 
+    				<label for="">ContactID</label>
+				<input type="text" readonly formControlName="ucontactid" [(ngModel)]="ucontactid">
+          		</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Fullname<span class="danger" *ngIf="formUpContact.controls['ufullname'].valid == false " >*</span> </label>
+				<input type="text" formControlName="ufullname" [(ngModel)]="ufullname" [ngClass]="formUpContact.controls['ufullname'].valid == false ? 'control-danger' : 'control-success' " >
+				<p>
+      				  <small class="danger" *ngIf="formUpContact.value.nfullname =='' "   >this feild is required</small>
+				</p>
+          		</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Email <span class="danger" *ngIf="formUpContact.controls['uemail'].valid == false " >*</span> </label> 
+				<input type="text" formControlName="uemail" [(ngModel)]="uemail" [ngClass]="formUpContact.controls['uemail'].valid == false ? 'control-danger' : 'control-success' ">
+				<p>
+      				  <small class="danger" *ngIf="formUpContact.value.uemail =='' "   >this feild is required</small>
+				</p>
+			</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Phone <span class="danger" *ngIf="formUpContact.controls['uphone'].valid == false " >*</span> </label> 
+				<input type="text" formControlName="uphone" [(ngModel)]="uphone" [ngClass]="formUpContact.controls['uphone'].valid == false ? 'control-danger' : 'control-success' ">
+				<p>
+      				  <small class="danger" *ngIf="formUpContact.value.uphone =='' "   >this feild is required</small>
+				</p>
+			</div>
+		    </li><br>
+		    <li>
+			<div class="form-group"> 
+    				<label for="">Address<span class="danger" *ngIf="formUpContact.controls['uaddress'].valid == false " >*</span> </label> 
+				<input type="text" formControlName="uaddress" [(ngModel)]="uaddress" [ngClass]="formUpContact.controls['uaddress'].valid == false ? 'control-danger' : 'control-success' ">
+				<p>
+      				  <small class="danger" *ngIf="formUpContact.value.uaddress =='' "   >this feild is required</small>
+				</p>
+			</div>
+		    </li><br>
+		</ul>    
+	  <div class="form-group"> 
+		  <button type="Submit"  class="btn btn-warning" [disabled]= " !formUpContact.valid" >Update</button>
+  	</div>
+	</form>
+
+</div>

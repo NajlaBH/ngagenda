@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
+import {Router} from '@angular/router';
+
+
 import { Contact } from '../models/contact';
+
 
 
 @Injectable({
@@ -13,8 +17,10 @@ export class ContactService {
     new Contact(3,'help desk', 'helpdesk@gmail.com','+00434098678','Swiss.')
   ];
 
+  indexToUpdate:number=0;
 
-  constructor() { }
+  //constructor() { }
+  constructor(private router: Router){ } 
 
   //Delete task
   deleteContact(key: number) {
@@ -24,7 +30,18 @@ export class ContactService {
            console.log("index deleted:", index);
 
         });
-    //this.contactserv.splice(indx, 1);
-    //console.log("index deleted:", indx);
   }
+
+  //Update task
+  getId(key:number){
+    this.contactserv.forEach((value,index)=>{
+     if(value.contactid==key) 
+           //console.log("index Updated:", index);
+	   this.indexToUpdate= key;
+	   //console.log("indexToUpdated:", this.indexToUpdate);
+	   this.router.navigateByUrl('/updateContact');
+           return index;
+        });
+   }
+  
 }

@@ -1,0 +1,42 @@
+.cupdate{
+  border: 2px solid red;
+  padding: 50px;
+  border-radius: 50px 20px;
+  border-color:#8A2BE2;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right:20px;
+}
+
+input[type=text] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  margin-left: 40px;
+}
+
+.additem{
+  list-style: none;
+  padding-right: 30px;
+  display: inline-block;
+ /* width: 140px;*/
+  text-align: right;
+  color:navy;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.danger{
+ color:red;
+}
+
+.control-success{
+    border: 1px solid #87d087;
+    outline: none;
+}
+
+.control-danger{
+    border: 1px solid #d08787;
+    outline: none;
+}

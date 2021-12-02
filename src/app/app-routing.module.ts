@@ -10,6 +10,7 @@ import { CrudComponent } from './crud/crud.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
 	//{path: 'crud', component: CrudComponent},
         {path: 'crud', canActivate: [AuthGuardService], component: CrudComponent},
 	{path: 'addContact',canActivate: [AuthGuardService], component:AddContactComponent}, 
+	{path:  'updateContact', canActivate: [AuthGuardService],component:UpdateContactComponent},
 	];
 
 @NgModule({
